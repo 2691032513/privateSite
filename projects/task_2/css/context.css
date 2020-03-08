@@ -1,0 +1,33 @@
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    width: 1400px;
+    height: 900px;
+    background-image: url("../image/bg2.jpg");
+    margin: 3% auto auto;
+}
+
+.start{
+    width: 1175px;
+    padding-top: 60px;
+    padding-left: 125px;
+    font-size: 55px;
+    color: white;
+    padding-right: 100px;
+}
+
+table{
+    width: 1192px;
+    height: 632px;
+    margin-left: 125px;
+    margin-top: 75px;
+    text-align: center;
+}
+
+.spanner{
+    padding-left: 30px;
+}
