@@ -1,0 +1,84 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.box{
+	width: 1003px;
+	margin: auto;
+}
+
+.language{
+	text-align: right;
+	height: 25px;
+	font-size: 12px;
+	line-height: 25px;
+	padding-right: 15px;
+	background-image: url(../img/language.jpg);
+}
+
+.box>nav{
+	margin-bottom: 12px;
+}
+
+.box>article>aside{
+	float: left;
+}
+
+.box>article>main{
+	float: left;
+}
+
+
+
+.notify{
+	background-image: url(../img/notify_bar.jpg);
+	width: 237px;
+	height: 156px;
+}
+.notify>ul>li{
+	width: 237px;
+	margin-bottom: 5px;
+	padding-left: 25px;
+}
+
+.notify>ul{
+	padding-top: 40px;
+}
+
+footer{
+	clear: both;
+}
+
+li{
+	list-style: none;
+	font-size: 10px;
+}
+
+
+.government{
+	margin-top: 10px;
+	background-image: url(../img/government_affair.jpg);
+	width: 237px;
+	height: 199px;
+	font-size: 10px;
+}
+
+.government>ul{
+	padding-top: 50px;
+	padding-left: 20px;
+}
+
+.government>ul>li{
+	list-style: none;
+	margin-bottom: 5px;
+}
+
+.government>p{
+	padding-top: 10px;
+	text-align: right;
+	padding-right: 20px;
+}
+
+
