@@ -1,0 +1,135 @@
+p,body,section,input,img,div,ul{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    list-style: none;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+#box{
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    width: 1600px;
+    background-color: white;
+    display: block;
+    height: 900px;
+}
+
+nav>img{
+    padding-left: 204px;
+    padding-top: 111px;
+}
+
+main{
+    background-color: #00A0E9;
+    height: 600px;
+    padding:0 200px;
+    margin-top: 10px;
+}
+
+.map{
+    margin: 10px;
+    float: left;
+}
+
+.form{
+    float: right;
+    padding-top: 60px;
+}
+
+.form>p{
+    font-size: 15px;
+    text-align: right;
+    color: white;
+}
+
+.border{
+    border: 1px black solid;
+}
+
+.form>div{
+    margin-top: 17px;
+    width: 400px;
+    height: 420px;
+    background-color: white;
+}
+
+
+.form>div p{
+    padding-top: 32px;
+    padding-left: 32px;
+    font-size: 20px;
+}
+
+.form>div section{
+    height: 44px;
+    width: 338px;
+    border: 1px #CDCDCD solid;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+
+.form>div section>input{
+    height: 44px;
+    width: 282px;
+    padding-left: 12px;
+    font-size: 15px;
+}
+
+.remember input{
+    height: 16px;
+    width: 16px;
+}
+
+.remember{
+    height: 16px;
+    font-size: 15px;
+    line-height: 16px;
+    margin-left: 32px;
+    margin-top: 30px;
+    padding: 2px 0;
+}
+
+#submit{
+    height: 44px;
+    width: 338px;
+    border: 1px #CDCDCD solid;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+#submit>input{
+    width: 100%;
+    padding: 0;
+    background-color: #00A0E9;
+    font-size: 20px;
+    color: white;
+}
+
+footer{
+    padding: 20px 200px;
+    font-size: 15px;
+}
+
+footer section:first-of-type{
+    float: left;
+}
+
+footer section:last-of-type{
+    float: right;
+}
+
+footer li{
+    float: left;
+}
+
+footer li>a{
+    padding:0 10px;
+}
