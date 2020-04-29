@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>事件</title>
+		<style type="text/css">
+			input{font-size:26px;margin-top: 20px;}
+			body{background-image: url(images/grassland.png);}
+			#mytank{position: absolute;left:10px;top:100px;transition: transform 0.5s;}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="按钮一"/>
+		<input type="button" value="按钮二" />
+		<input type="button" value="按钮三"/>
+		<h1	> you can click enter to shoot bullet </h1>
+		<hr />
+		<img id="mytank" src="images/right.png"/>
+		<script type="text/javascript">
+			var mytank = document.getElementById('mytank');
+			document.addEventListener('contextmenu',event=>{
+				event.preventDefault()
+
+			})
+
+
+			let skew = {
+				x :[70,43,15,43],
+				y: [29,56,29,2]
+			}
+			let speed = 2
+			function shoot(orientation){
+				let bullet = document.createElement('div');
+				let x = mytank.offsetLeft
+				let y = mytank.offsetTop
+				bullet.style.width = '10px'
+				bullet.style.height = '10px'
+				bullet.style.borderRadius = '5px'
+				bullet.style.backgroundColor = 'black'
+				bullet.style.position = 'absolute'
+				bullet.style.top = y + skew.y[orientation] - 5 +'px'
+				bullet.style.left = x + skew.x[orientation] - 5 + 'px'
+				document.body.appendChild(bullet)
+
+				let num =setInterval(function () {
+					bullet.style.scale = bullet.style.scale * 2
+					if (orientation==0)
+						bullet.style.left = (bullet.offsetLeft + speed) + 'px'
+					if (orientation==1)
+						bullet.style.top = (bullet.offsetTop + speed) + 'px'
+					if (orientation==2)
+						bullet.style.left = (bullet.offsetLeft - speed) + 'px'
+					if (orientation==3)
+						bullet.style.top = (bullet.offsetTop - speed) + 'px'
+				},10)
+
+				setTimeout(function () {
+					clearInterval(num)
+					bullet.remove()
+				},3000)
+			}
+
+			let orientation = 0;
+			// 179000545 张文
+			window.addEventListener(
+				'keydown',
+				function(e){
+					console.log(e.keyCode);
+					if (e.keyCode == 13){
+						shoot(orientation)
+					}
+					if(e.keyCode == 39){
+						mytank.style.left = (mytank.offsetLeft+10)+'px';
+						mytank.style.transform = 'rotate(0deg)'
+						orientation = 0
+					}if(e.keyCode == 38){
+						mytank.style.top = (mytank.offsetTop-10)+'px';
+						mytank.style.transform = 'rotate(-90deg)'
+						orientation = 3
+					}if(e.keyCode == 40){
+						mytank.style.top = (mytank.offsetTop+10)+'px';
+						mytank.style.transform = 'rotate(90deg)'
+						orientation = 1
+					}if(e.keyCode == 37){
+						mytank.style.left = (mytank.offsetLeft-10)+'px';
+						mytank.style.transform = 'rotate(180deg)'
+						orientation = 2
+					}
+				});
+
+			document.querySelectorAll('input')[0].addEventListener('click',function(){
+				alert('javascript事件测试一')
+			})
+
+			document.querySelectorAll('input')[1].addEventListener('dblclick',function(){
+				this.value = '按钮二测试'
+			})
+			document.querySelectorAll('input')[2].addEventListener('mouseover',function(){
+				this.style.backgroundColor = 'blue'
+				this.style.color = 'white'
+			})
+			document.querySelectorAll('input')[2].addEventListener('click',function(){
+				alert('javascript事件测试三')
+			})
+
+
+		</script>
+	</body>
+</html>
