@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dom</title>
+</head>
+<body>
+<div>
+    <section id="calendar">
+        <p></p>
+        <div></div>
+    </section>
+    <section id="clock">
+        <div></div>
+    </section>
+</div>
+</body>
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    section:first-child{
+        background: url("./imgs/cald.png");
+        width: 150px;
+        height: 138px;
+    }
+    #calendar>p{
+        font-size: 22px;
+        color: white;
+        text-align: center;
+        line-height: 35px;
+    }
+
+    #clock>div{
+        color: white;
+        text-align: center;
+        vertical-align: center;
+        line-height:146px;
+        font-size: 48px;
+        margin-left: 25px;
+    }
+
+    #calendar>div{
+        font-size: 88px;
+        color: black;
+        line-height: 88px;
+        text-align: center;
+    }
+
+
+    section:last-child{
+        background: url("./imgs/clock.png");
+        width: 240px;
+        height: 146px;
+    }
+</style>
+
+<script>
+
+
+    // 179000545 张文
+    let daysMap =["日","一","二","三","四","五","六"]
+
+    function format(num){
+        return num>9?num:'0'+num
+    }
+
+    setInterval(()=>{
+        let date = new Date()
+        document.querySelector("#calendar>p").innerText = "星期" + daysMap[date.getDay()]
+        document.querySelector("#calendar>div").innerText = date.getDate()
+
+        let hours = format(date.getHours())
+        let minutes = format(date.getMinutes())
+        let seconds = format(date.getSeconds())
+        document.querySelector("#clock>div").innerHTML = hours +":" + minutes + ":" + seconds
+
+    },100)
+
+
+
+
+</script>
+
+</html>
