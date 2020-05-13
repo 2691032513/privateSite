@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>DOM操作-练习</title>
+    <style type="text/css">
+        body {
+            font-size: 13px;
+            line-height: 25px;
+        }
+
+        table {
+            border-top: 1px solid #333;
+            border-left: 1px solid #333;
+            width: 300px;
+        }
+
+        td {
+            border-right: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script>
+        // 179000545 张文
+        function addRow() {
+            let jrow = $("#row3")
+            let jnewrow = $('<tr>')
+            let jnewcol1 = $('<td>',{
+                text:"幸福从天而降"
+            })
+            let jnewcol2 = $('<td>',{
+                text:"¥18.50",
+                align: "center"
+            })
+            jnewrow.append(jnewcol1,jnewcol2)
+            $('#row1').parent().after(jrow,jnewrow)
+        }
+        function updateRow() {
+            let up = $("#row1")
+            up.attr({
+                style: "font-weight:bold;text-align:center;background-color: #cccccc;"
+            })
+
+        }
+        function delRow() {
+            let del = $("tr")
+            if(del[2]!=null) del[2].remove()
+        }
+        function copyRow() {
+
+            let copy = $("#row3").clone()
+            $('#myTable').append(copy)
+        }
+    </script>
+</head>
+
+<body>
+<table border="0" cellspacing="0" cellpadding="0" id="myTable">
+    <tr id="row1">
+        <td>书名</td>
+        <td>价格</td>
+    </tr>
+    <tr id="row2">
+        <td>看得见风景的房间</td>
+        <td class="center">&yen;30.00</td>
+    </tr>
+    <tr id="row3">
+        <td>60个瞬间</td>
+        <td class="center">&yen;32.00</td>
+    </tr>
+</table>
+<input name="b1" type="button" value="增加一行" onclick="addRow()" />
+<input name="b2" type="button" value="删除第2行" onclick="delRow()" />
+<input name="b3" type="button" value="修改标题样式" onclick="updateRow()" />
+<input name="b4" type="button" value="复制最后一行" onclick="copyRow()" />
+
+</body>
+
+</html>
