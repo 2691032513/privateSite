@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer">
+    <title>Title</title>
+</head>
+<script src="./js/jquery-3.1.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/content.css"/>
+<body>
+
+<div>
+    <span><h1>最近上映的电影</h1></span>
+    <ul>
+        <li>热门</li>
+        <li>最新</li>
+        <li>豆瓣高分</li>
+        <li>冷门佳片</li>
+        <li>华语</li>
+        <li>欧美</li>
+        <li>韩国</li>
+        <li>日本</li>
+    </ul>
+    <div style="clear: both"></div>
+
+    <div class="container">
+
+    </div>
+</div>
+</body>
+
+<script>
+
+    $(function(){
+        let map = {
+
+        }
+
+        $.ajax({
+            url:'https://douban.uieee.com/v2/movie/in_theaters',
+            method:'post',
+            dataType: 'JSONP',
+            success(response){
+                let list = response.subjects
+                $('.container').children().remove()
+                list.forEach(item=>{
+                    console.log(item)
+                    let template = `<div class="item"><img src="${item.images.large}" alt="${item.images.large}"><p>${item.title} <span>${item.rating.average}</span></p></div>`
+                    $('.container').append(template)
+                })
+            }
+        })
+
+    })
+
+
+
+</script>
+</html>

@@ -1,4 +1,6 @@
+// 179000545 张文
 $(function () {
+
     $(".hd li").on('click',function () {
         $('.hd li').removeClass('on')
         $(this).toggleClass('on')
@@ -9,13 +11,11 @@ $(function () {
             }
         }
     })
-
     $('input').click(function () {
         $('.tabox').toggle()
         $(this).toggle()
         $('.game').toggle()
     })
-
     $('.game').click(function (event) {
         let rule = $('.rule')
         rule.stop()
@@ -36,21 +36,9 @@ $(function () {
             top: event.pageY - 140
         },duration,'linear')
     })
-
     $('.rule').on('dblclick',function (event) {
         event.stopPropagation()
         $(this).find('img').attr('src','./img/playerbig_left.gif')
         $(window).trigger('click')
     })
-
-
-
-
-
-
-
-
-
-
-
 })
